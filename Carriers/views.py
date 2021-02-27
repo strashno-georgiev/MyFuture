@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def estj(request):
+    return render(request, "Carriers/estj.html")
