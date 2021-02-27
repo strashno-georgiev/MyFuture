@@ -42,19 +42,12 @@ def home(request):
     if request.method == 'POST':
         if form.is_valid():
             type = form.cleaned_data.get('type')
-<<<<<<< HEAD
-            print("\n\n\n\n\n\n\n", type ,"\n\n\n\n\n\n\n")
-            messages.success(request, f'Jobs fot  {type}!')
-            return redirect('pages-home')
-
-=======
             context = {
                 'professions': Profession.objects.all(),
                 'type':type,
             }
             #return render(request, 'Carriers/personality_carriers.html', context);
             return redirect("personality_careers/" + type)
->>>>>>> career-detail
     context = {
 
         'posts': posts,
