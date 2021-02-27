@@ -36,7 +36,7 @@ def home(request):
             type = form.cleaned_data.get('type')
             print("\n\n\n\n\n\n\n", type ,"\n\n\n\n\n\n\n")
             messages.success(request, f'Jobs fot  {type}!')
-            return redirect('pages-about')
+            return redirect('pages-home')
 
     context = {
 
