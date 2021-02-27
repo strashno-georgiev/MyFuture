@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Profession
+
 def estj(request):
-    context = {
-        'professions':Profession.objects.all(),
-    }
+    if(request.type == GET):
+        context = {
+            'professions':Profession.objects.all(),
+        }
     return render(request, "Carriers/estj.html", context)
 
 
