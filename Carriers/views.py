@@ -1,8 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from .models import Profession
 def estj(request):
-    return render(request, "Carriers/estj.html")
+    context = {
+        'professions':Profession.objects.all(),
+    }
+    return render(request, "Carriers/estj.html", context)
+
+
 posts = [
     {
         'author': 'CoreyMS',
