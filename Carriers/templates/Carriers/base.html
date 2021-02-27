@@ -25,8 +25,35 @@
       }
       body{
         background-color: #d2faf0
-
       }
+      .wraper{
+        overflow: hidden;
+      }
+      .left {
+          float:left;
+      }
+
+      .right{
+        float:right;
+      }
+
+      .profesion-bubbles{
+        text-align: center;
+        background-color: #fba83e;
+        width: 49%;
+        padding: 5% 10%;
+        margin-top: 1%;
+        margin-left: 1%;
+      }
+      .footer {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: red;
+        color: white;
+        text-align: center;
+      }
+
     </style>
     {% if title %}
       <title>Shop - {{ title }}</title>
@@ -55,12 +82,15 @@
       </nav>
     </header>
     <main role="main" class="container">
-  <div class="row">
-    <div class="content">
-      <center> {% block content %}{% endblock %} </center>
+      <div class="row">
+        <div class="content">
+          <center> {% block content %}{% endblock %} </center>
+        </div>
+      </div>
+    </main>
+    <div class="footer">
+      asd
     </div>
-  </div>
-</main>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
