@@ -5,12 +5,20 @@ from .models import Profession
 from .forms import MyForm
 from django.contrib import messages
 
-def estj(request):
-    if(request.type == GET):
-        context = {
-            'professions':Profession.objects.all(),
-        }
-    return render(request, "Carriers/estj.html", context)
+def personality_carriers(request, type):
+    context = {
+        'professions': Profession.objects.all(),
+        'type': type,
+    }
+    return render(request, "Carriers/personality_carriers.html", context)
+
+def profession_detail(request, profession_type):
+    context = {
+        'profession': Profession.objects.filter(name=profession_type)[0],
+    }
+
+    return render(request, "Carriers/profession_detail.html", context)
+
 
 posts = [
     {
@@ -34,10 +42,19 @@ def home(request):
     if request.method == 'POST':
         if form.is_valid():
             type = form.cleaned_data.get('type')
+<<<<<<< HEAD
             print("\n\n\n\n\n\n\n", type ,"\n\n\n\n\n\n\n")
             messages.success(request, f'Jobs fot  {type}!')
             return redirect('pages-home')
 
+=======
+            context = {
+                'professions': Profession.objects.all(),
+                'type':type,
+            }
+            #return render(request, 'Carriers/personality_carriers.html', context);
+            return redirect("personality_careers/" + type)
+>>>>>>> career-detail
     context = {
 
         'posts': posts,
