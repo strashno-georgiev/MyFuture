@@ -1,0 +1,8 @@
+{% extends "Carriers/base.html" %}
+{% block content%}
+  <h1>About page</h1>
+  <h2>Info</h2>
+  {% for i in info %}
+    <h2>{{i.phone}}</h2>
+  {% endfor %}
+{% endblock content %}
