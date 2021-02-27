@@ -6,13 +6,13 @@
         <form method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Check your 16 personalities result</legend>
+                <legend class="border-bottom mb-4">Здравейте! Ние работим с резултата от теста на 16personalities.com . Можете да го направите на линка по-долу, а после да въведете 4-буквения си код(без -Т/А)</legend>
                 {{ form|crispy }}
             </fieldset>
-            <p>Не сте правили теста 16personalities?</p>
             <div class="form-group">
               <button class="btn btn-outline-info" type="submit">Вижте професии</button>
             </div>
+            <p>Не сте правили теста 16personalities?</p>
             <a href="https://16personalities.com"> Можете да го направите тук.</a>
         </form>
 

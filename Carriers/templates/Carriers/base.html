@@ -48,9 +48,10 @@
         left: 0;
         bottom: 0;
         width: 100%;
-        background-color: red;
+        background-color: #ffdccc;
         color: white;
         text-align: center;
+        position: fixed;
       }
 
     </style>
@@ -64,13 +65,13 @@
     <header class="site-header">
       <nav class="navbar navbar-expand-md bg-orange fixed-top">
         <div class="container">
-          <a class="navbar-brand mr-4 nav-item" href="{% url 'pages-home' %}">Home</a>
+          <a class="navbar-brand mr-4 nav-item" href="{% url 'pages-home' %}">Начало</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="{% url 'pages-about' %}">About</a>
+              <a class="navbar-brand mr-4 nav-item" href="{% url 'pages-about' %}">За нас</a>
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
