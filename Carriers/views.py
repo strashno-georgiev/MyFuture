@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from .forms import MyForm
+from django.contrib import messages
 
 posts = [
     {
@@ -18,9 +20,19 @@ posts = [
 
 
 def home(request):
+
+    form = MyForm(request.POST)
+    if request.method == 'POST':
+        if form.is_valid():
+            type = form.cleaned_data.get('type')
+            print("\n\n\n\n\n\n\n", type ,"\n\n\n\n\n\n\n")
+            messages.success(request, f'Jobs fot  {type}!')
+            return redirect('pages-about')
+
     context = {
 
-        'posts': posts
+        'posts': posts,
+        'form':form,
     }
 
     return render(request, 'Carriers/home.html', context)

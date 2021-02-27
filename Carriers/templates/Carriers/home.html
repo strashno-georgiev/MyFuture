@@ -1,4 +1,21 @@
 {% extends "Carriers/base.html" %}
-{% block content%}
-  <h1>Home page</h1>
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+      <h1>Home page</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Check your 16 personalities result</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <p>Не сте правили теста 16personalities?</p>
+            <a href="https://16personalities.com"> Можете да го направите тук.</a>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">See jobs</button>
+            </div>
+        </form>
+    </div>
+
+
 {% endblock content %}
