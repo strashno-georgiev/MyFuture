@@ -1,7 +1,7 @@
 from django import forms
 
 class MyForm(forms.Form):
-    type = forms.CharField(label='Your type', max_length=4)
+    type = forms.CharField(label='Вашият 4-буквен код:', max_length=4)
 
     def __init__(self, *args, **kwargs):
         super(MyForm, self).__init__(*args, **kwargs) # Call to ModelForm constructor
