@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 {% block content %}
     <div class="content-section">
-      <h1>Home page</h1>
+        <div class="blank"></div>
         <form method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
@@ -17,10 +17,10 @@
         </form>
 
         <div class="wraper">
-          <div class="left profesion-bubbles"> Бизнес и предприемачество </div>
-          <div class="right profesion-bubbles"> STEM </div>
-          <div class="left profesion-bubbles"> Изкуства </div>
-          <div class="right profesion-bubbles"> Медицина </div>
+          <div class="left profesion-bubbles"><a href="personality_careers/business">Бизнес и предприемачество </a></div>
+          <div class="right profesion-bubbles"><a> STEM </a></div>
+          <div class="left profesion-bubbles"><a> Изкуства </a></div>
+          <div class="right profesion-bubbles"><a> Медицина </a></div>
         </div>
     </div>
 

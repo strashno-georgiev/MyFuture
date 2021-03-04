@@ -16,7 +16,8 @@ def profession_detail(request, profession_type):
     context = {
         'profession': Profession.objects.filter(name=profession_type)[0],
     }
-
+    video_path = "{% static Carriers/" + context['profession'].name + "/video.mp4 %}"
+    context['video_path'] = video_path
     return render(request, "Carriers/profession_detail.html", context)
 
 

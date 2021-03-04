@@ -1,3 +1,15 @@
 div, p {
     display: block;
 }
+.homefour {
+    font-size: 20px;
+    background-color: #FBA83E;
+    padding: 57px 114px;
+}
+div.blank {
+    margin: 80px 0px 80px 0px;
+}
+.detailvideo {
+    width: 20%;
+    height: 50%;
+}
