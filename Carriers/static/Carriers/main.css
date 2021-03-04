@@ -1,0 +1,30 @@
+body {
+    font-family: Verdana, sans-serif;
+    font-size: 16px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, serif;
+}
+.container {
+    padding: 0% 15%;
+}
+div.column-left {
+    display: inline-block;
+    max-width: 40%;
+    float: left;
+}
+div.column-right {
+    display: inline-block;
+    max-width: 40%;
+    float: right;
+}
+.homeimg {
+    max-width: 100%;
+}
+.submit-code {
+    padding: 5% 10%;
+
+}
+.left {
+    text-align:left;
+}

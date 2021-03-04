@@ -21,26 +21,10 @@ def profession_detail(request, profession_type):
     return render(request, "Carriers/profession_detail.html", context)
 
 
-posts = [
-    {
-        'author': 'CoreyMS',
-        'title': 'Blog Post 1',
-        'content': 'First post content',
-        'date_posted': 'August 27, 2018'
-    },
-    {
-        'author': 'Jane Doe',
-        'title': 'Blog Post 2',
-        'content': 'Second post content',
-        'date_posted': 'August 28, 2018'
-    }
-]
-
-
 def home(request):
 
-    form = MyForm(request.POST)
     if request.method == 'POST':
+        form = MyForm(request.POST)
         if form.is_valid():
             type = form.cleaned_data.get('type')
             context = {
@@ -49,9 +33,9 @@ def home(request):
             }
             #return render(request, 'Carriers/personality_carriers.html', context);
             return redirect("personality_careers/" + type)
+    else:
+        form = MyForm();
     context = {
-
-        'posts': posts,
         'form':form,
     }
 

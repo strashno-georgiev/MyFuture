@@ -1,26 +1,29 @@
 {% extends "Carriers/base.html" %}
 {% load crispy_forms_tags %}
+{% load static %}
 {% block content %}
     <div class="content-section">
-        <div class="blank"></div>
-        <form method="POST">
-            {% csrf_token %}
-            <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Здравейте! Ние работим с резултата от теста на 16personalities.com . Можете да го направите на линка по-долу, а после да въведете 4-буквения си код(без -Т/А)</legend>
-                {{ form|crispy }}
-            </fieldset>
-            <div class="form-group">
-              <button class="btn btn-outline-info" type="submit">Вижте професии</button>
-            </div>
-            <p>Не сте правили теста 16personalities?</p>
-            <a href="https://16personalities.com"> Можете да го направите тук.</a>
-        </form>
-
-        <div class="wraper">
-          <div class="left profesion-bubbles"><a href="personality_careers/business">Бизнес и предприемачество </a></div>
-          <div class="right profesion-bubbles"><a> STEM </a></div>
-          <div class="left profesion-bubbles"><a> Изкуства </a></div>
-          <div class="right profesion-bubbles"><a> Медицина </a></div>
+        <div class="column-left">
+          <h1>Здравейте!</h1>
+          <p class="left">Ние работим с резултата от теста на 16personalities.com.
+          След отговаряне на множество от въпроси, тестът на 16personalities ще ви причисли към една от 16 групи личности, всяка със специален 4-буквен код, който трябва да въведете в полето по-долу(без последната буква след тирето).
+          Ако все още не сте правили теста на 16personalities можете да го направите от адреса под снимката. :)</p>
+          <br>
+          <form method="POST">
+              {% csrf_token %}
+              <fieldset class="form-group">
+                {{ form }}
+              </fieldset>
+              <br>
+              <div>
+                <button class="submit-code" type="submit">Вижте професии</button>
+              </div>
+          </form>
+        </div>
+        <div class="column-right">
+          <img src={% static 'Carriers/home_image.jpg'%} class="homeimg"></img>
+          <p>Не сте правили теста 16personalities?</p>
+          <a href="https://16personalities.com"> Можете да го направите тук.</a>
         </div>
     </div>
 

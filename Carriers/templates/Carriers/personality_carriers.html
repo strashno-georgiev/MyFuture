@@ -3,25 +3,14 @@
 {% block content%}
     {%for profession in professions%}
     {%if type in profession.tags%} 
-
-        <div class="row">
-            <div class="col-sm-8 border border-dark">
             <div class="card bg-dark text-black">
                 <!<img class="card-img" src="{% static "Carriers/{{profession.name}}/image.jpg"%}" alt="Card image">
                 <div class="card-img-overlay">
-                    <h5 class="card-title"><a href="career_detail/{{profession.name}}">{{profession.name}}</a></h5>
+                    <h3 class="card-title"><a href="career_detail/{{profession.name}}">{{profession.name}}</a></h3>
                     <p class="card-text">{{profession.description}}</p>
                 </div>
             </div>
-            </div>
-        </div>
-
-    {%endif%}g
+    {%endif%}
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
     {%endfor%}
 {%endblock%}
