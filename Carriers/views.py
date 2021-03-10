@@ -1,14 +1,19 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from .models import Profession
+from django.http import HttpResponse, Http404
+from .models import Profession, PersonalityType
 
-from .forms import MyForm
+from .forms import CodeForm
 from django.contrib import messages
 
 def personality_carriers(request, type):
+    valid_professions = Profession.objects.filter(tags__contains=type)
+    try:
+        personality_type = PersonalityType.objects.filter(code=str(type))[0]
+    except:
+        raise Http404("Personality type does not exist.")
     context = {
-        'professions': Profession.objects.all(),
-        'type': type,
+        'professions':valid_professions,
+        'personality':personality_type,
     }
     return render(request, "Carriers/personality_carriers.html", context)
 
@@ -24,7 +29,7 @@ def profession_detail(request, profession_type):
 def home(request):
 
     if request.method == 'POST':
-        form = MyForm(request.POST)
+        form = CodeForm(request.POST)
         if form.is_valid():
             type = form.cleaned_data.get('type')
             context = {
@@ -34,7 +39,7 @@ def home(request):
             #return render(request, 'Carriers/personality_carriers.html', context);
             return redirect("personality_careers/" + type)
     else:
-        form = MyForm();
+        form = CodeForm();
     context = {
         'form':form,
     }

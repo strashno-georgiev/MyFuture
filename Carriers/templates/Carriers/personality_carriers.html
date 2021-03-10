@@ -1,16 +1,38 @@
 {% extends "Carriers/base.html" %}
 {%load static%}
+{%block stylesheets%}
+    <link rel="stylesheet" type="text/css" href="{% static 'Carriers/careers.css'%}">
+{%endblock%}
 {% block content%}
+    <div>
+        <div class="cm-4">
+            <h1>{{personality}}</h1>
+            <p>{{personality.desc}}</p>
+        </div>
+        <div class="cm-6">
+            <img style="padding-left:15%;" src={%static "Carriers/personality_types/"|add:personality.code|add:".png"%}>
+        </div>
+    </div>
+    <br/>
     {%for profession in professions%}
-    {%if type in profession.tags%} 
-            <div class="card bg-dark text-black">
-                <!<img class="card-img" src="{% static "Carriers/{{profession.name}}/image.jpg"%}" alt="Card image">
-                <div class="card-img-overlay">
-                    <h3 class="card-title"><a href="career_detail/{{profession.name}}">{{profession.name}}</a></h3>
-                    <p class="card-text">{{profession.description}}</p>
-                </div>
+        <div class="profession-card">
+            <!--<div class="cm-4">
+                <a href="career_detail/{{profession.name}}">
+                        <h2 style="margin-top:0;">{{profession.name}}</h2>
+                        <p>{{profession.short_desc}}</p>      
+                </a>
             </div>
-    {%endif%}
-    <br>
+            <div class="cm-6" style="overflow:hidden;">
+                <img src="{% static "Carriers/"|add:profession.name|add:"/image.jpg" %}" id="profImg">
+            </div>-->
+            <div class="card-image" style="background-image: url({% static 'Carriers/'|add:profession.name|add:'/image.jpg'%})">
+                <h1 style="color:white; margin: 0;">{{profession.name}}</h1>
+            </div>
+            <div>
+                <p style="padding: 1% 2% 1% 2%;">{{profession.short_desc}}</p>
+            </div>
+        </div>
+        <br>
     {%endfor%}
+    </div>
 {%endblock%}

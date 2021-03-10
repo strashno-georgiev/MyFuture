@@ -1,29 +1,39 @@
 {% extends "Carriers/base.html" %}
 {% load crispy_forms_tags %}
 {% load static %}
+{%block stylesheets%}
+    <link rel="stylesheet" type="text/css" href="{% static 'Carriers/home.css' %}">
+{%endblock%}
 {% block content %}
     <div class="content-section">
         <div class="column-left">
-          <h1>Здравейте!</h1>
+          <h1 style='font-size:80px'>Здравейте!</h1>
           <p class="left">Ние работим с резултата от теста на 16personalities.com.
-          След отговаряне на множество от въпроси, тестът на 16personalities ще ви причисли към една от 16 групи личности, всяка със специален 4-буквен код, който трябва да въведете в полето по-долу(без последната буква след тирето).
+          След отговаряне на множество от въпроси, тестът на 16personalities ще ви причисли към една от 16 групи личности, всяка със специален 4-буквен код, който трябва да въведете в полето по-долу(без последната буква след тирето, с <span style="color:#e68a00;">главни букви</span>).
           Ако все още не сте правили теста на 16personalities можете да го направите от адреса под снимката. :)</p>
-          <br>
           <form method="POST">
               {% csrf_token %}
-              <fieldset class="form-group">
-                {{ form }}
-              </fieldset>
+                {{ form.type.label_tag }}
+                <br>
+                <div class="form-input">
+                  {{form.type}}
+                </div>
+              <br>
               <br>
               <div>
-                <button class="submit-code" type="submit">Вижте професии</button>
+                <button class="submit-code" type="submit"><h3>Вижте професии</h3></button>
               </div>
           </form>
         </div>
+        <br/>
+        <br/>
+        <br/>
         <div class="column-right">
           <img src={% static 'Carriers/home_image.jpg'%} class="homeimg"></img>
-          <p>Не сте правили теста 16personalities?</p>
-          <a href="https://16personalities.com"> Можете да го направите тук.</a>
+          <div style='font-size:12px; color:grey; text-align: right;'>
+              Не сте правили теста 16personalities?<br>
+              <a href="https://16personalities.com"> Можете да го направите тук.</a>
+          </div
         </div>
     </div>
 

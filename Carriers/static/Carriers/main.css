@@ -1,30 +1,80 @@
 body {
     font-family: Verdana, sans-serif;
-    font-size: 16px;
+    font-size: 20px;
+    margin: auto;
+    background-color: white;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: Georgia, serif;
 }
 .container {
     padding: 0% 15%;
+    margin-top: 13vh;
 }
-div.column-left {
-    display: inline-block;
-    max-width: 40%;
-    float: left;
+nav {
+    display: block;
+    background-color: #e68a00;
+    width:100vw;
+    max-height: 10%;
 }
-div.column-right {
-    display: inline-block;
-    max-width: 40%;
-    float: right;
-}
-.homeimg {
-    max-width: 100%;
-}
-.submit-code {
-    padding: 5% 10%;
+#navlist {
+    list-style-type: none;
+    background-color: #e68a00;
+    padding: 0%;
+    margin-block: 0em;
+    width: 100%;
 
 }
-.left {
-    text-align:left;
+#navlist li, #navlist li a, #navlist li a h3 {
+    width: 100vw;
+    height: 100%;
+    margin: 0;
+}
+@media only screen and (min-width: 1100px) {
+    nav {
+        height: 10vh;
+    }
+    #navlist li a h3, #navlist li a {
+        text-align: center;
+        vertical-align: middle;
+        display: inline-block;
+        width: auto;
+        height: auto;
+    }
+    #navlist li {
+        text-align: center;
+        display: inline-block;
+        width: 20%;
+    }
+    #navlist li a {
+        width: 100%;
+        height: 100%;
+    }
+    #navlist li a h3 {
+        padding: 4vh 0vh;
+    }
+    nav {
+        position: fixed;
+        width: 100vw;
+    }
+    #navlist {
+        padding: 0;
+        height:100%;
+    }
+}
+#navlist li a:link, #navlist li a:visited {
+    color: black;
+    font-family: Verdana, sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+    text-decoration: none;
+}
+h3 {
+    font: inherit;
+}
+#navlist li a:hover {
+    background-color:#ffa31a;
+}
+#navlist li a:active {
+    background-color: #e68a00a1;
 }
