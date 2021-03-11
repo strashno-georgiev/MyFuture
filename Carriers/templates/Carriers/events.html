@@ -1,0 +1,12 @@
+{%extends "Carriers/base.html"%}
+
+{%block content%}
+    {% for event in events%}
+        <div class="event-card">
+            <h2>{{event.title}}</h2>
+            <p style="font-size:10px; color: grey;">{{event.actual_date}}</p>
+            <p>{{event.desc}}</p>
+            <p>Published on: {{event.pub_date}}</p>
+        </div>
+    {%endfor%}
+{%endblock%}

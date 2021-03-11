@@ -14,3 +14,13 @@ class PersonalityType(models.Model):
     desc = models.TextField(max_length=None)
     def __str__(self):
         return self.code
+
+class ProfessionEvent(models.Model):
+    title = models.CharField(max_length=80)
+    place = models.CharField(max_length=50)
+    pub_date = models.DateField(auto_now_add=True)
+    actual_date = models.DateTimeField()
+    desc = models.TextField(max_length=None)
+    profession = models.ForeignKey("Carriers.Profession", on_delete=models.CASCADE)
+    def __str__(self):
+        return self.title + "[{0}]".format(self.profession) 

@@ -1,23 +1,43 @@
 div.column-left {
     display: block;
-    width: 100%
-    float: left;
+    width: 100%;
 }
 div.column-right {
     margin-top: 5%;
     width: 100%;
     display: block;
+    margin-top:5vh;
+}
+.cm-3 {
+    width: 100%;
+    padding: 0% 1%;
+    height: 60vh;
+    background-color: #ffa31a ;
+    border: 1px solid #ffa31a;
+    /*border-radius: calc(5px + 2vw);*/
+    text-align: center;
+}
+.full-width {
+    margin-top: 20vh;
 }
 @media only screen and (min-width: 1100px) {
     div.column-left {
         display: inline-block;
         max-width: 40%;
-        float: left;
     }
     div.column-right {
         display: inline-block;
         max-width: 40%;
         float: right;
+    }
+    .cm-3 {
+        display:inline-block;
+        max-width: 25%;
+        margin: 0% 2.5%;
+    }
+    .full-width {
+        margin-left: -21%;
+        margin-right: -21%;
     }
 }
 .homeimg {
@@ -28,7 +48,9 @@ div.column-right {
     background-color: #e68a00;
     outline: 5px solid #ffa31a;
     border: none;
-    float: left;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: calc(10px + 0.5vw);
+    display:block;
 
 }
 .submit-code:hover {
@@ -54,6 +76,7 @@ div.column-right {
     font-size: 43px;
     font-weight: bold;
     color: black;
+    width: 100%;
 }
 
 .form-input input:focus {

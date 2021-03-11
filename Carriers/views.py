@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, Http404
-from .models import Profession, PersonalityType
+from .models import Profession, PersonalityType, ProfessionEvent
 
 from .forms import CodeForm
 from django.contrib import messages
@@ -11,9 +11,15 @@ def personality_carriers(request, type):
         personality_type = PersonalityType.objects.filter(code=str(type))[0]
     except:
         raise Http404("Personality type does not exist.")
+    events = ProfessionEvent.objects.all()
+    valid_events = []
+    for event in events:
+        if event.profession in valid_professions:
+            valid_events.append(event)
     context = {
         'professions':valid_professions,
         'personality':personality_type,
+        'events': valid_events,
     }
     return render(request, "Carriers/personality_carriers.html", context)
 
@@ -50,3 +56,9 @@ def home(request):
 
 def about(request):
     return render(request, 'Carriers/about.html', {'title': 'About'})
+
+def events_page(request):
+    context = {
+        'events': ProfessionEvent.objects.all()
+    }
+    return render(request, 'Carriers/events.html', context)
