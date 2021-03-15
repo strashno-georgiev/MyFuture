@@ -6,7 +6,19 @@
             <h2>{{event.title}}</h2>
             <p style="font-size:10px; color: grey;">{{event.actual_date}}</p>
             <p>{{event.desc}}</p>
-            <p>Published on: {{event.pub_date}}</p>
+            <p style="font-size:14px; color: grey;">Публикувано на: {{event.pub_date}}</p>
+            <button onclick="signbutton({{event.pk}})">Запиши се</button>
+            <div class="a{{event.pk}}" style="display:none;">
+                <form>
+                </form>
+            </div>
         </div>
     {%endfor%}
+    <script>
+        function signbutton(event) {
+            console.log(typeof ('a' + event));
+            
+            document.getElementsByClassName('a' + event)[0].style.display = "block";
+        }
+    </script>
 {%endblock%}

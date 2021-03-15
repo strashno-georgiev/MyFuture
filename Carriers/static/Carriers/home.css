@@ -67,7 +67,8 @@ div.column-right {
     border: none;
     float: left;
 }
-.form-input input {
+
+.home-input {
     /*padding: 5% 20%;*/
     margin-top: 0.5%;
     border: none;
@@ -79,6 +80,17 @@ div.column-right {
     width: 100%;
 }
 
+@keyframes codeinput {
+    0% {
+        transfrom: scaleX(0.50);
+    }
+    25% { 
+        transform: scaleX(0.75);
+    }
+    100% {
+        transform: scaleX(1);    
+    }
+}
 .form-input input:focus {
     outline: none;
     border: none;
@@ -86,4 +98,6 @@ div.column-right {
     font-size: 43px;
     font-weight: bold;
     color: black;
+    animation-name: codeinput;
+    animation-duration: 1s;
 }

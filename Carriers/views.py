@@ -45,20 +45,21 @@ def home(request):
             #return render(request, 'Carriers/personality_carriers.html', context);
             return redirect("personality_careers/" + type)
     else:
-        form = CodeForm();
+        form = CodeForm()
     context = {
-        'form':form,
+        'form': form,
+        'title': 'Начало',
     }
-
     return render(request, 'Carriers/home.html', context)
 
 
 
 def about(request):
-    return render(request, 'Carriers/about.html', {'title': 'About'})
+    return render(request, 'Carriers/about.html', {'title': 'За нас'})
 
 def events_page(request):
     context = {
-        'events': ProfessionEvent.objects.all()
+        'events': ProfessionEvent.objects.all(),
+        'title': 'Събития',
     }
     return render(request, 'Carriers/events.html', context)
